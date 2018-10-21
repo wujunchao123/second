@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>店铺详情页面</title>
+    {% load static %}
+    <script src="{% static 'js/lib/jquery2.2.4/jquery-2.2.4.min.js' %}"></script>
+    <!--<script src="/static/js/lib/jquery2.2.4/jquery-2.2.4.min.js}"></script>-->
+</head>
+<body>
+    <h1>店铺详情页面</h1>
+    <table border="1">
+        <tr>
+            <td>店铺头像</td>
+            <td><img src="/{{store.cover}}" alt="头像"></td>
+        </tr>
+        <tr>
+            <td>店铺名称</td>
+            <td>{{store.name}}</td>
+        </tr>
+        <tr>
+            <td>店铺介绍</td>
+            <td>{{store.intro}}</td>
+        </tr>
+        <tr>
+            <td>店铺状态</td>
+            <td>
+                {% if store.status == 0 %}
+                    <p>正在营业</p>
+                    <a href="{% url 'stores:change' store.id 1 %}">暂停营业</a>
+                    <a href="{% url 'stores:change' store.id 2 %}">删除店铺</a>
+                {% elif store.status == 1 %}
+                    <p>暂停营业</p>
+                    <a href="{% url 'stores:change' store.id 0 %}">开始营业</a>
+                    <a href="{% url 'stores:change' store.id 2 %}">删除店铺</a>
+                {% elif store.status == 2 %}
+                    <p>店铺已经被删除，请联系管理员</p>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>操作</td>
+            <td><a href="{% url 'stores:update' store.id %}">修改店铺信息</a></td>
+        </tr>
+    </table>
+    <hr>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看自己的所有的店铺</title>
+</head>
+<body>
+    <h1>查看自己的所有的店铺</h1>
+    <table border="1">
+        {% for store in stores %}
+        <tr>
+            <td>店铺头像</td>
+            <td><img src="/{{store.cover}}" alt="店铺头像"></td>
+        </tr>
+        <tr>
+            <td>店铺名称</td>
+            <td>{{store.name}}</td>
+        </tr>
+        <tr>
+            <td>店铺介绍</td>
+            <td>{{store.intro}}</td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'stores:detail' store.id %}">查询详情</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td>没有查询到您的店铺，快去<a href="{% url 'stores:add' %}">开店</a>吧</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
