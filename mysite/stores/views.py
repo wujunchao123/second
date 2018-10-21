@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_GET
 
 from . import models
-# from goods.models import GoodsType, Goods
+from goods.models import GoodsType, Goods
 
 
 # 增加店铺
@@ -60,9 +60,9 @@ def update(request, s_id):
 @login_required()
 def detail(request, s_id):
 	store = models.Stores.objects.get(pk=s_id)
-	# type1 = GoodsType.objects.filter(goodType__isnull=True)
-	# goods = Goods.objects.filter(store=store)
-	return render(request, "stores/detail.html", {"store": store})#, "type1": type1, "goods":goods})
+	type1 = GoodsType.objects.filter(goodType__isnull=True)
+	goods = Goods.objects.filter(store=store)
+	return render(request, "stores/detail.html", {"store": store, "type1": type1, "goods": goods})
 
 
 # 关闭店铺

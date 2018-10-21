@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^user/', include("user.urls", namespace='user')),
 	url(r"^shopcar/", include("shopcar.urls", namespace="shopcar")),
 	url(r"^stores/", include("stores.urls", namespace="stores")),
+	url(r"^goods/", include("goods.urls", namespace="goods")),
 	url(r"^", include("common.urls", namespace="common"))
 ]
