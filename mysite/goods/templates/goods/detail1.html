@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情界面</title>
+</head>
+<body>
+    <h1>商品详情界面</h1>
+    <div class="good-img">
+        <img src="/user/static/upload/static/{{goods.goodsimage_set.all.filter.path}}" alt="商品图片">
+        <!--<img src="/user/static/upload/static/goods/7_3C5fQKJ.jpg" alt="商品图片">-->
+        <!--<img src="/.user/static/upload/static/goods/3_yyt3fWw.jpg" alt="商品图片">-->
+        <!--<img src="/.user/static/upload/static/goods/3_yyt3fWw.jpg" alt="商品图片">-->
+        <!--<img src="/static/img/login_bg.jpg" alt="商品图片">-->
+        <!--<img src="/{{goods.goodsimage_set.all.first.path}}" alt="没有">-->
+
+
+    </div>
+    <div class="good-name">
+        {{goods.name}}
+    </div>
+    <div class="good-intro">
+        {{goods.intro}}
+    </div>
+    <div class="good-price">
+        单价：{{goods.price}}|销量：{{goods.count}}
+    </div>
+    <div class="shopcar">
+        <a href="#">加入购物车</a>
+    </div>
+</body>
+</html>

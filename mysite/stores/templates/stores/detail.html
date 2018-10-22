@@ -70,7 +70,7 @@
     <h1>已上架商品</h1>
     {% for g in goods %}
     <div>
-        <img src="/{{g.goodsImage_set.all.first.path}}" alt="商品图片">==========={{g.name}}======{{g.price}}======{{g.stock}} <br>
+        <img src="/{{g.goodsimage_set.all.first.path}}" alt="商品图片">==========={{g.name}}======{{g.price}}======{{g.stock}} <br>
         <a href="{% url 'goods:detail' g.id %}">查看商品详情</a>
     </div>
     {% empty %}
