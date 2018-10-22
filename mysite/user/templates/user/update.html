@@ -2,11 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-        <!--<meta name="author" content="order by dede58.com"/>-->
 		<title>小米商城-个人中心</title>
 		<link rel="stylesheet" type="text/css" href="/static/user/css/style.css">
-		<!--<link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css ">-->
-    	<!--<script src="/static/js/lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
 	</head>
 	<body>
 	<!-- start header -->
@@ -40,11 +37,20 @@
 					<div class="gouwuche fr"><a href="./dingdanzhongxin.html">我的订单</a></div>
 					<div class="fr">
 						<ul>
-							<li><a href="./login.html" target="_blank">登录</a></li>
-							<li>|</li>
-							<li><a href="./register.html" target="_blank" >注册</a></li>
-							<li>|</li>
-							<li><a href="#top">个人中心</a></li>
+							{% if request.user.is_active %}
+								<li><a href="./login.html" target="_blank">欢迎{{user}}登录系统</a></li>
+								<li>|</li>
+								<li><a href="{% url 'user:user_logout'%}" target="_blank" >退出</a></li>
+								<li><a href="{% url 'user:register'%}" target="_blank" >注册</a></li>
+							{% else %}
+								<li><a href="{% url 'user:login'%}" target="_blank" >登录</a></li>
+								<li><a href="{% url 'user:register'%}" target="_blank" >注册</a></li>
+							{% endif %}
+							<!--<li><a href="./login.html" target="_blank">登录</a></li>-->
+							<!--<li>|</li>-->
+							<!--<li><a href="./register.html" target="_blank" >注册</a></li>-->
+							<!--<li>|</li>-->
+							<!--<li><a href="#top">个人中心</a></li>-->
 						</ul>
 					</div>
 					<div class="clear"></div>
@@ -111,27 +117,27 @@
 			<div class="grzlbt ml40">我的资料</div>
 			<form action="/user/update/" method="post" enctype="multipart/form-data">
 			{{ msg }}
+			{% csrf_token %}
 			<div class="subgrzl ml40" id="biankuang">
 				<span>昵称</span>
-				<input  style="font-size: 20px" type="text" value="{{user.userinfo.nickname}}" name="nickname" >
+				<input  style="font-size: 20px" type="text" value="{{user.userinfo.nickname}}" name="nickname" autocomplete="off">
 			</div>
 			<div class="subgrzl ml40">
 				<span>手机号</span>
-				<input style="font-size: 20px" type="text" value="{{user.userinfo.phone}}" name="phone" >
+				<input style="font-size: 20px" type="text" value="{{user.userinfo.phone}}" name="phone" autocomplete="off">
 			</div>
 			<div class="subgrzl ml40">
 				<span>年龄</span>
-				<input style="font-size: 20px" type="text" value="{{user.userinfo.age}}" name="age" >
+				<input style="font-size: 20px" type="text" value="{{user.userinfo.age}}" name="age"  autocomplete="off">
 			</div>
 			<div class="subgrzl ml40">
 				<span>头像</span>
-				<input style="font-size: 17px" type="file" value="{{user.userinfo.header}}" name="header" >
+				<input style="font-size: 17px" type="file" value="{{user.userinfo.header}}" name="header" autocomplete="off" >
 			</div>
-
-
-
-
-			<div class="subgrzl ml40"><span>收货地址</span><span>浙江省杭州市江干区19号大街571号</span></div>
+			<div class="subgrzl ml40">
+				<span>收货地址</span>
+				<input style="font-size: 17px" type="text" value="{{user.userinfo.site}}" name="site" autocomplete="off">
+			</div>
 			<button id="xiu" type="submit">确认修改</button>
 			</form>
 		</div>

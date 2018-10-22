@@ -1,27 +1,7 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>会员注册</title>-->
-<!--</head>-->
-<!--<body>-->
-     <!--<h1>用户注册</h1>-->
-    <!--<form action="{% url 'user:register' %}" method="post">-->
-        <!--{% csrf_token %}-->
-        <!--用户名称：<input type="text" name="username"><br>-->
-        <!--用户昵称：<input type="text" name="nickname"><br>-->
-        <!--用户密码：<input type="password" name="password"><br>-->
-        <!--确认密码：<input type="password" name="confirmpwd"><br>-->
-        <!--<input type="submit" value="用户注册">-->
-    <!--</form>-->
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-        <!--<meta name="author" content="order by dede58.com"/>-->
 		<title>用户注册</title>
 		<link rel="stylesheet" type="text/css" href="/static/user/css/login.css">
 	</head>
@@ -44,17 +24,22 @@
 
 					<div class="username">确认密码:&nbsp;&nbsp;<input class="shurukuang" type="password" name="confirmpwd" placeholder="请确认你的密码"/><span>两次密码要输入一致哦</span></div>
 					<div class="username">手&nbsp;&nbsp;机&nbsp;&nbsp;号:&nbsp;&nbsp;<input class="shurukuang" type="text" name="phone" placeholder="请填写正确的手机号"/><span>填写下手机号吧，方便我们联系您！</span></div>
-					<!--<div class="username">-->
-						<!--<div class="left fl">验&nbsp;&nbsp;证&nbsp;&nbsp;码:&nbsp;&nbsp;<input class="yanzhengma" type="text" name="username" placeholder="请输入验证码"/></div>-->
-						<!--<div class="right fl"><img src="/user/static/image/yanzhengma.jpg"></div>-->
-						<!--<div class="clear"></div>-->
-					<!--</div>-->
+					<div class="username">
+						<div class="left fl">验&nbsp;&nbsp;证&nbsp;&nbsp;码:&nbsp;&nbsp;<input class="yanzhengma" type="text" name="code" placeholder="请输入验证码" autocomplete="off"/></div>
+						<div class="right fl"><a href="#" onclick="changeCode()"><img id="code" src="{% url 'user:code' %}" title="点击刷新"></a></div>
+						<div class="clear"></div>
+					</div>
 				</div>
 				<div class="regist_submit">
 					<input class="submit" type="submit" name="submit" value="立即注册" >
 				</div>
 			</div>
 		</div>
+		<script>
+			function changeCode() {
+				document.getElementById("code").src = "/user/code?id="+ Math.random()
+			}
+    	</script>
 		</form>
 	</body>
 </html>

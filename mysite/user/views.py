@@ -1,11 +1,30 @@
+from io import BytesIO
+
+from django.http import HttpResponse
+
+
 from django.shortcuts import render
 # 引入数据库用户名表
 from django.contrib.auth.models import User
 # django内置的登陆推出方法
-from django.contrib.auth import authenticate,logout,login
+from django.contrib.auth import authenticate, logout, login
 # 引入models模块
 from . import models
+# 引入验证码模块
+from . import utils
+
+import math
 from django.shortcuts import redirect
+
+
+# 验证码
+def code(request):
+    img, code = utils.create_code()
+    # 将验证码保存到code中
+    request.session['code'] = code
+    file = BytesIO()
+    img.save(file, 'PNG')
+    return HttpResponse(file.getvalue())
 
 
 # 用户登陆
@@ -15,6 +34,12 @@ def user_login(request):
     elif request.method == "POST":
         username = request.POST["username"].strip()
         password = request.POST["password"].strip()
+        # 验证码
+        # code = request.POST['code']
+        # mycode = request.session['code']
+        # if code.upper() != mycode.upper():
+        #     return render(request, 'user/login.html', {'msg': '验证码输入错误'})
+        # del request.session['code']
 
         user = authenticate(username=username, password=password)
         if user is not None:
@@ -23,7 +48,7 @@ def user_login(request):
                 login(request, user)
                 request.session['login'] = user.id
 
-                return render(request, "user/userInfo.html", {"user": user})
+                return render(request, "user/userInfo.html", {"user":request.user, "img": request.user.userinfo.header})
             else:
                 return render(request, "user/login.html", {"error_code": 2, "msg": "你的账号已经被锁定，请联系管理员"})
         else:
@@ -39,19 +64,26 @@ def register(request):
         password = request.POST["password"].strip()
         nickname = request.POST["nickname"]
         confirmpwd = request.POST["confirmpwd"].strip()
-        # phone = request.POST["phone"]
+        phone = request.POST["phone"]
 
         # 两次密码判断
         if password != confirmpwd:
             return render(request, 'user/register.html', {"error_code": 1, "msg": "两次密码不一致，请重新输入"})
 
         # 验证码判断
+        # code = request.POST['code']
+        # mycode = request.session['code']
+        # if code.upper() != mycode.upper():
+        #     return render(request, 'user/register.html', {'msg': '验证码输入错误'})
+        # del request.session['code']
 
         # 判断用户名是否相可用
         if len(username) < 1:
             return render(request, "user/register.html", {"msg": "用户名不能为空！！！"})
         if len(password) < 6:
             return render(request, "user/register.html", {"msg": "密码长度不能小于6位！！！"})
+        if len(phone) != 11:
+            return render(request, 'user/register.html', {'msg':'手机号输入错误！！'})
 
         try:
             User.objects.get(username=username)
@@ -63,7 +95,7 @@ def register(request):
             except:
                 # 保存用户信息
                 user = User.objects.create_user(username=username, password=password,)
-                userInfo = models.UserInfo(nickname=nickname, user=user)
+                userInfo = models.UserInfo(nickname=nickname,phone=phone, user=user)
 
                 user.save()
                 userInfo.save()
@@ -90,11 +122,11 @@ def update(request):
         nickname = request.POST['nickname']
         # 获取文件域对象
         header = request.FILES.get('header')
-        # print(header)
-        # id = request.session['login']
-        #
+        print(header)
+        id = request.session['login']
+
         # user = models.User.objects.get(id=id)
-        # user = models.User(phone=phone,
+        # user = models.User(
         #                    age=age,
         #                    nickname=nickname,
         #                    header=header)
@@ -103,28 +135,14 @@ def update(request):
         user.userinfo.nickname = nickname
         user.userinfo.header = header
         user.userinfo.save()
-        return render(request, 'user/userInfo.html',
-                      {"msg": "修改成功!!", 'user': user})
+        return render(request, 'user/userInfo.html', {"msg": "修改成功!!", 'user': request.user,
+                                                      "img": request.user.userinfo.header})
 
-
-
-        # nickname = request.POST["nickname"]
-        # age = request.POST['age']
-        # # 获取用户
-        # # user = models.User.objects.get(id=request.session['login'])
-        # user = models.User.objects.get(id=request.user)
-        # # 修改值
-        # user.age = age
-        # user.nickname = nickname
-        # # 保存
-        # user.save()
-        #
-        # return redirect('/user/')
 
 # 展示用户信息
 def user_info(request):
     if request.method == "GET":
-        return render(request, "user/userInfo.html", {})
+        return render(request, "user/userInfo.html", {"img": request.user.userinfo.header})
     if request.method == "POST":
         return render(request, "user/userInfo.html", {})
 
@@ -138,7 +156,7 @@ def user_info(request):
 # django 封装文件上传
 def register2(request):
     if request.method == 'GET':
-        return render(request,'user/userInfo.html',{'msg':'请按照格式进行修改'})
+        return render(request, 'user/userInfo.html', {'msg':'请按照格式进行修改'})
     elif request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -151,5 +169,5 @@ def register2(request):
                            nickname=nickname,
                            header=header)
         user.save()
-        return render(request,'user/userInfo.html',
-                      {"msg": "修改成功!!", 'user':user})
+        return render(request, 'user/userInfo.html',
+                      {"msg": "修改成功!!", 'user': user})
