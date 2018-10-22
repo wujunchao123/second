@@ -45,7 +45,7 @@
     </table>
     <hr>
     <h1>上架商品</h1>
-    <form action="{% url 'goods:add' %}" method="post" enctype="multipart/form-data">
+    <form action="{% url 'goods:add' store.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         商品名称：<input type="text" name="name" id="name"> <br>
         商品单价：<input type="number" name="price"> <br>
@@ -69,7 +69,10 @@
     <hr>
     <h1>已上架商品</h1>
     {% for g in goods %}
-        <img src="{{g.goodsImage_set.all.first.path}}" alt="商品图片">==========={{g.name}}======{{g.price}}======{{g.stock}}
+    <div>
+        <img src="/{{g.goodsImage_set.all.first.path}}" alt="商品图片">==========={{g.name}}======{{g.price}}======{{g.stock}} <br>
+        <a href="{% url 'goods:detail' g.id %}">查看商品详情</a>
+    </div>
     {% empty %}
         当前没有商品呢
     {% endfor %}

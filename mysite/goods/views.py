@@ -5,12 +5,14 @@ from django.http import HttpResponse
 
 from . import models
 from stores.models import Stores
+from goods.models import Goods
 
 
 #商品增加
-def add(request):
+def add(request, store_id):
 	if request.method == "GET":
-		return render(request, "goods/add.html", {})
+		type1 = models.GoodsType.objects.filter(goodType__isnull=True)
+		return render(request, "goods/add.html", {"store_id": store_id, "type1": type1})
 	else:
 		name = request.POST["name"]
 		price = request.POST["price"]
@@ -41,3 +43,8 @@ def findType(request):
 	type2 = models.GoodsType.objects.filter(goodType=goodType_id)
 	return HttpResponse(serialize("json", type2))
 
+
+# 商品详情界面
+def detail(request, g_id):
+	goods = models.Goods.objects.get(pk=g_id)
+	return render(request, "goods/detail.html", {"goods": goods})
