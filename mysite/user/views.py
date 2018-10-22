@@ -90,7 +90,7 @@ def update(request):
         nickname = request.POST['nickname']
         # 获取文件域对象
         header = request.FILES.get('header')
-        print(header)
+        # print(header)
         # id = request.session['login']
         #
         # user = models.User.objects.get(id=id)

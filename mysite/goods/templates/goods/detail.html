@@ -7,7 +7,13 @@
 <body>
     <h1>商品详情界面</h1>
     <div class="good-img">
-        <img src="/{{goods.goodsimage_set.all.first.path}}" alt="商品图片">
+        <img src="/{{goods.goodsimage_set.all.filter.path}}" alt="商品图片">
+        <!--<img src="/.user/static/upload/static/goods/3_yyt3fWw.jpg" alt="商品图片">-->
+        <!--<img src="/.user/static/upload/static/goods/3_yyt3fWw.jpg" alt="商品图片">-->
+        <!--<img src="/static/img/login_bg.jpg" alt="商品图片">-->
+        <!--<img src="/{{goods.goodsimage_set.all.first.path}}" alt="没有">-->
+
+
     </div>
     <div class="good-name">
         {{goods.name}}

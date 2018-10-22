@@ -8,7 +8,7 @@ class Stores(models.Model):
 	# 店铺名称
 	name = models.CharField(max_length=255, unique=True, verbose_name="店铺名称")
 	# 店铺封面
-	cover = models.ImageField(upload_to="sataic/stores", default="sataic/stores/3.jpg", verbose_name="店铺封面")
+	cover = models.ImageField(upload_to="static/stores", default="static/stores/3.jpg", verbose_name="店铺封面")
 	# 店铺描述
 	intro = models.TextField(verbose_name="店铺描述")
 	# 开店时间

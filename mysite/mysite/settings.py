@@ -143,4 +143,4 @@ MD5_SALT = "chaominghao"
 
 # 数据库头像保存路径
 MEDIA_URL ='user/static/upload/'
-MEDIA_ROOT = '.user/static/upload/'
+MEDIA_ROOT = './user/static/upload/'
