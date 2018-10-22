@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect, reverse
-from django.views.decorators.http import require_GET # 请求
-from django.core.serializers import serialize # 序列化
+from django.views.decorators.http import require_GET  # 请求
+from django.core.serializers import serialize  # 序列化
 from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required #登陆后才能使用，否则跳到登陆界面
+from django.contrib.auth.decorators import login_required  # 登陆后才能使用，否则跳到登陆界面
 
 from . import models
 from stores.models import Stores
 from goods.models import Goods
 
 
-#商品增加
+# 商品增加
 @login_required
 def add(request, store_id):
 	if request.method == "GET":
@@ -23,7 +23,6 @@ def add(request, store_id):
 		type2 = request.POST["type2"]
 		intro = request.POST["intro"]
 		cover = request.FILES["cover"]
-		print("cover")
 
 		store = Stores.objects.get(pk=store_id)
 		goodsType = models.GoodsType.objects.get(pk=type2)
@@ -55,12 +54,12 @@ def detail(request, g_id):
 
 
 
-#修改商品
+# 修改商品
 @login_required
 def update(request, g_id):
 	if request.method == "GET":
 		# type1 = models.GoodsType.objects.filter(goodType__isnull=True)
-		return render(request, "goods/add.html", {"g_id": g_id})
+		return render(request, "goods/update.html", {"g_id": g_id})
 	else:
 		name = request.POST["name"]
 		price = request.POST["price"]
