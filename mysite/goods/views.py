@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.views.decorators.http import require_GET # 请求
 from django.core.serializers import serialize # 序列化
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required #登陆后才能使用，否则跳到登陆界面
 
 from . import models
 from stores.models import Stores
@@ -9,6 +10,7 @@ from goods.models import Goods
 
 
 #商品增加
+@login_required
 def add(request, store_id):
 	if request.method == "GET":
 		type1 = models.GoodsType.objects.filter(goodType__isnull=True)
@@ -45,6 +47,19 @@ def findType(request):
 
 
 # 商品详情界面
+@login_required
 def detail(request, g_id):
 	goods = models.Goods.objects.get(pk=g_id)
 	return render(request, "goods/detail.html", {"goods": goods})
+
+
+#修改商品
+@login_required
+def update(request, g_id):
+	pass
+
+
+#删除商品
+@login_required
+def delete(request, g_id):
+	pass
