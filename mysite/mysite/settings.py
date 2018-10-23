@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'common',
-    "shopcar"
+    "shopcar",
+	'stores',
+	'goods',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +143,8 @@ MD5_SALT = "chaominghao"
 
 # 数据库头像保存路径
 MEDIA_URL ='user/static/upload/'
-MEDIA_ROOT = '.user/static/upload/'
+MEDIA_ROOT = './user/static/upload/'
+
+
+# session存在对象前会自动调用该模块进行数据的序列化
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'

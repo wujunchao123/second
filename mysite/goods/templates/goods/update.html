@@ -1,0 +1,34 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>修改商品信息</title>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<h1>修改商品信息</h1>-->
+    <!--<form action="{% url 'goods:update' goods.id %}" method="post" enctype="multipart/form-data">-->
+        <!--{% csrf_token %}-->
+        <!--商品名称：<input type="text" name="name" value="{{goods.name}}"> <br>-->
+        <!--商品单价：<input type="number" name="price" value="{{goods.price}}"> <br>-->
+        <!--商品库存：<input type="number" name="stock" value="{{goods.stock}}"> <br>-->
+        <!--<input type="text" name="store" value="{{store.id}}"> <br>-->
+        <!--商品图片：<img src="/{{goods.goodsimage_set.all.first.path}}" alt=""> <br>-->
+        <!--&lt;!&ndash;商品图片：<input type="file" name="cover"><button>继续添加</button> <br>&ndash;&gt;-->
+        <!--商品图片：<input type="file" name="cover"><br>-->
+        <!--&lt;!&ndash;商品类型：&ndash;&gt;-->
+        <!--&lt;!&ndash;商品类型： <input type="text" name="type2" value="{{goods.goodsType}}">&ndash;&gt;-->
+            <!--<select name="type1" id="type1">-->
+                <!--<option value="-1">请选择一级类型</option>-->
+                <!--{#{% for t in type1 %}#}-->
+                <!--<option value="{{t.id}}">{{t.name}}</option>-->
+                <!--{#{% endfor %}#}-->
+            <!--</select>-->
+            <!--<select name="type2" id="type2">-->
+                <!--<option value=""></option>-->
+            <!--</select> <br>-->
+        <!--商品介绍：-->
+        <!--<textarea name="intro" id="intro" cols="30" rows="10" >{{goods.intro}}</textarea> <br>-->
+        <!--<button type="submit" class="btn btn-default submit-btn">保存修改</button>-->
+    <!--</form>-->
+<!--</body>-->
+<!--</html>-->

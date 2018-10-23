@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上架商品</title>
+    {% load static %}
+    <script src="{% static 'js/lib/jquery2.2.4/jquery-2.2.4.min.js' %}"></script>
+</head>
+<body>
+    <h1>上架商品</h1>
+    <div>
+        <form action="{% url 'goods:add' store_id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            商品名称：<input type="text" name="name" id="name"> <br>
+            商品单价：<input type="number" name="price"> <br>
+            商品库存：<input type="number" name="stock"> <br>
+            <!--<input type="hidden" name="store" value="{{store.id}}"> <br>-->
+            商品图片：<input type="file" name="cover"><button>继续添加</button> <br>
+            商品类型：
+                <select name="type1" id="type1">
+                    <option value="-1">请选择一级类型</option>
+                    {% for t in type1 %}
+                    <option value="{{t.id}}">{{t.name}}</option>
+                    {% endfor %}
+                </select>
+                <select name="type2" id="type2">
+                    <option value=""></option>
+                </select> <br>
+            商品介绍：
+            <textarea name="intro" id="intro" cols="30" rows="10"></textarea> <br>
+            <button type="submit" class="btn btn-default submit-btn">添加商品</button>
+        </form>
+    </div>
+
+
+<script>
+    $(function(){
+        $("#type1").on("change",function(){
+            $.ajax({
+                url:"/goods/findType/",
+                type:"get",
+                data:{"goodType_id":$(this).val()},
+                success:function(data){
+                    $("#type2").empty()
+                    data = JSON.parse(data);
+                    for (var i = 0; i < data.length; i++){
+                        var type = data[i];
+                        $op = $("<option>");
+                        $op.attr("value", type.pk)
+                        $op.text(type.fields.name)
+                        $("#type2").append($op)
+                    }
+                },
+                error:function(){
+                    alert("网络异常，请重新点击")
+                }
+            });
+        });
+    })
+</script>
+
+</body>
+</html>

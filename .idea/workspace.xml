@@ -1,158 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e10dfee-9f1d-47da-a756-92405958cda1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/MANIFEST.in" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/README.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyun_python_sdk_dysmsapi.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyun_python_sdk_dysmsapi.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyun_python_sdk_dysmsapi.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyun_python_sdk_dysmsapi.egg-info/requires.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyun_python_sdk_dysmsapi.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdybaseapi/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdybaseapi/request/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdybaseapi/request/v20170525/QueryTokenForMnsQueueRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdybaseapi/request/v20170525/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/v20170525/QueryInterSmsIsoInfoRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/v20170525/QuerySendDetailsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/v20170525/QueryTokenForMnsQueueRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/v20170525/SendBatchSmsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/v20170525/SendInterSmsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/v20170525/SendSmsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/aliyunsdkdysmsapi/request/v20170525/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdybaseapi/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdybaseapi/request/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdybaseapi/request/v20170525/QueryTokenForMnsQueueRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdybaseapi/request/v20170525/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/v20170525/QueryInterSmsIsoInfoRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/v20170525/QuerySendDetailsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/v20170525/QueryTokenForMnsQueueRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/v20170525/SendBatchSmsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/v20170525/SendInterSmsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/v20170525/SendSmsRequest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/build/lib/aliyunsdkdysmsapi/request/v20170525/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/const.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/demo_sms_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/demo_sms_query.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/demo_sms_send.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/dist/aliyun_python_sdk_dysmsapi-1.0.0-py3.6.egg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/bin/mnscmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_account.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_exception.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_http.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_pkg_info.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_queue.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_subscription.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_topic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/mns/mns_xml_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/access_log.8080" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/createqueue.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/createtopic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/deletequeue.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/deletetopic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/endpoint_log.8080" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/publishmessage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/recvdelmessage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/sample_common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/sendmessage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/simple_http_notify_endpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/simple_https_notify_endpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/subscribe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/sample/subscribe_queueendpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/mns_python_sdk/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/dysms_python/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/second.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/second.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/__init__.py" afterDir="false" />
-    </list>
+    <list default="true" id="9cb583e4-c149-47c1-a2f0-cd26ed035ecf" name="Default" comment="Merge branch 'master' of github.com:wujunchao123/second&#10;&#10;# Conflicts:&#10;#&#9;mysite/goods/__pycache__/models.cpython-36.pyc&#10;#&#9;mysite/goods/__pycache__/views.cpython-36.pyc&#10;#&#9;mysite/mysite/__pycache__/settings.cpython-36.pyc&#10;#&#9;mysite/stores/__pycache__/models.cpython-36.pyc&#10;#&#9;mysite/stores/migrations/__pycache__/0002_auto_20181022_1425.cpython-36.pyc&#10;#&#9;mysite/user/__pycache__/views.cpython-36.pyc" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1172317197">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.52" value="1" />
-          <entry key="project.open.time.73" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="py" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="Python" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="204" />
-          <entry key="py" value="19" />
-          <entry key="txt" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="204" />
-          <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="19" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mysite/shopcar/urls.py">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/shopcar/templates/shopcart/shopcart.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/shopcar/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2024">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
+            <state relative-caret-position="156">
+              <caret line="6" column="55" lean-forward="true" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#306#315#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,42 +25,14 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/mysite/shopcar/templates/shopcart.html" />
-        <option value="$PROJECT_DIR$/mysite/shopcar/views.py" />
-        <option value="$PROJECT_DIR$/mysite/shopcar/urls.py" />
-        <option value="$PROJECT_DIR$/mysite/shopcar/templates/shopcart/shopcart.html" />
-        <option value="$PROJECT_DIR$/mysite/dysms_python/demo_sms_send.py" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="170" />
-    <option name="y" value="31" />
-    <option name="width" value="1665" />
-    <option name="height" value="985" />
-  </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="12" />
+    <option name="y" value="5" />
+    <option name="width" value="976" />
+    <option name="height" value="866" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -215,6 +52,18 @@
               <item name="second" type="462c0819:PsiDirectoryNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="second" type="b2602c69:ProjectViewProjectNode" />
+              <item name="second" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="goods" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="second" type="b2602c69:ProjectViewProjectNode" />
+              <item name="second" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -222,20 +71,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/mytools/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\second\second\mysite" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\second\second\mysite\shopcar\templates\shopcart" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -254,89 +92,61 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4e10dfee-9f1d-47da-a756-92405958cda1" name="Default Changelist" comment="" />
-      <created>1540196050178</created>
+      <changelist id="9cb583e4-c149-47c1-a2f0-cd26ed035ecf" name="Default" comment="" />
+      <created>1540180068551</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1540196050178</updated>
+      <updated>1540180068551</updated>
     </task>
-    <task id="LOCAL-00001" summary="武军超-购物车">
-      <created>1540259344323</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1540259344323</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18699732" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14828898" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32874617" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.18960245" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19007093" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.32971507" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="武军超-购物车" />
-    <option name="LAST_COMMIT_MESSAGE" value="武军超-购物车" />
+    <MESSAGE value="m" />
+    <MESSAGE value="Merge branch 'master' of github.com:wujunchao123/second&#10;&#10;# Conflicts:&#10;#&#9;mysite/goods/__pycache__/models.cpython-36.pyc&#10;#&#9;mysite/goods/__pycache__/views.cpython-36.pyc&#10;#&#9;mysite/mysite/__pycache__/settings.cpython-36.pyc&#10;#&#9;mysite/stores/__pycache__/models.cpython-36.pyc&#10;#&#9;mysite/stores/migrations/__pycache__/0002_auto_20181022_1425.cpython-36.pyc&#10;#&#9;mysite/user/__pycache__/views.cpython-36.pyc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of github.com:wujunchao123/second&#10;&#10;# Conflicts:&#10;#&#9;mysite/goods/__pycache__/models.cpython-36.pyc&#10;#&#9;mysite/goods/__pycache__/views.cpython-36.pyc&#10;#&#9;mysite/mysite/__pycache__/settings.cpython-36.pyc&#10;#&#9;mysite/stores/__pycache__/models.cpython-36.pyc&#10;#&#9;mysite/stores/migrations/__pycache__/0002_auto_20181022_1425.cpython-36.pyc&#10;#&#9;mysite/user/__pycache__/views.cpython-36.pyc" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mysite/dysms_python/const.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/dysms_python/demo_sms_send.py">
+    <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/shopcar/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/shopcar/templates/shopcart/shopcart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/shopcar/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="3744">
+          <caret line="145" column="35" lean-forward="true" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#306#315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="55" lean-forward="true" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+          <folding>
+            <element signature="e#306#315#0" expanded="true" />
           </folding>
         </state>
       </provider>
