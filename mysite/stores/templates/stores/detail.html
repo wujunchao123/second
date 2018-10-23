@@ -5,78 +5,204 @@
     <title>店铺详情页面</title>
     {% load static %}
     <script src="{% static 'js/lib/jquery2.2.4/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static '/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
     <!--<script src="/static/js/lib/jquery2.2.4/jquery-2.2.4.min.js}"></script>-->
+
+    <link rel="stylesheet" href="/static/stores/css/detail.css">
+    <!--<link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css">-->
+    <link rel="stylesheet" href="/static/stores/css/style.css">
+
 </head>
 <body>
-    <h1>店铺详情页面</h1>
-    <table border="1">
-        <tr>
-            <td>店铺头像</td>
-            <td><img src="/{{store.cover}}" alt="头像"></td>
-        </tr>
-        <tr>
-            <td>店铺名称</td>
-            <td>{{store.name}}</td>
-        </tr>
-        <tr>
-            <td>店铺介绍</td>
-            <td>{{store.intro}}</td>
-        </tr>
-        <tr>
-            <td>店铺状态</td>
-            <td>
+
+	<!-- start header -->
+	<!-- 加载静态资源 -->
+		<header>
+			<div class="top center">
+				<div class="left fl">
+					<ul>
+						<li><a href="http://www.mi.com/" target="_blank">小米商城</a></li>
+						<li>|</li>
+						<li><a href="">MIUI</a></li>
+						<li>|</li>
+						<li><a href="">米聊</a></li>
+						<li>|</li>
+						<li><a href="">游戏</a></li>
+						<li>|</li>
+						<li><a href="">多看阅读</a></li>
+						<li>|</li>
+						<li><a href="">云服务</a></li>
+						<li>|</li>
+						<li><a href="">金融</a></li>
+						<li>|</li>
+						<li><a href="">小米商城移动版</a></li>
+						<li>|</li>
+						<li><a href="">问题反馈</a></li>
+						<li>|</li>
+						<li><a href="">Select Region</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="right fr">
+					<div class="gouwuche fr"><a href="">购物车</a></div>
+					<div class="fr">
+						<ul>
+							<li><a href="/user/login/" target="_blank">登录</a></li>
+							<li>|</li>
+							<li><a href="/user/register/" target="_blank" >注册</a></li>
+							<li>|</li>
+							<li><a href="">消息通知</a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+	<!--end header -->
+
+<!-- start banner_x -->
+		<div class="banner_x center">
+			<a href="./index.html" target="_blank"><div class="logo fl"></div></a>
+			<a href=""><div class="ad_top fl"></div></a>
+			<div class="nav fl">
+				<ul>
+					<li><a href="./liebiao.html" target="_blank">小米手机</a></li>
+					<li><a href="">红米</a></li>
+					<li><a href="">平板·笔记本</a></li>
+					<li><a href="">电视</a></li>
+					<li><a href="">盒子·影音</a></li>
+					<li><a href="">路由器</a></li>
+					<li><a href="">智能硬件</a></li>
+					<li><a href="">服务</a></li>
+					<li><a href="">社区</a></li>
+				</ul>
+			</div>
+			<div class="search fr">
+				<form action="" method="post">
+					<div class="text fl">
+						<input type="text" class="shuru"  placeholder="小米6&nbsp;小米MIX现货">
+					</div>
+					<div class="submit fl">
+						<input type="submit" class="sousuo" value="搜索"/>
+					</div>
+					<div class="clear"></div>
+				</form>
+				<div class="clear"></div>
+			</div>
+		</div>
+<!-- end banner_x -->
+
+<div class="stores">
+    <!--<h1>店铺详情页面</h1>-->
+    <div class="stores_xiangqing">
+        <ul class="stores_ul">
+            <li class="stores_img"><img src="/{{store.cover}}" alt="头像"></li>
+            <li class="stores_name">{{store.name}}</li>
+            <li class="stores_intro">{{store.intro}}</li>
+            <li class="stores_status">
                 {% if store.status == 0 %}
                     <p>正在营业</p>
-                    <a href="{% url 'stores:change' store.id 1 %}">暂停营业</a>
-                    <a href="{% url 'stores:change' store.id 2 %}">删除店铺</a>
+                    <button><a href="{% url 'stores:change' store.id 1 %}">暂停营业</a></button>
+                    <button><a href="{% url 'stores:change' store.id 2 %}">删除店铺</a></button>
                 {% elif store.status == 1 %}
                     <p>暂停营业</p>
-                    <a href="{% url 'stores:change' store.id 0 %}">开始营业</a>
-                    <a href="{% url 'stores:change' store.id 2 %}">删除店铺</a>
+                    <button><a href="{% url 'stores:change' store.id 0 %}">开始营业</a></button>
+                    <button><a href="{% url 'stores:change' store.id 2 %}">删除店铺</a></button>
                 {% elif store.status == 2 %}
                     <p>店铺已经被删除，请联系管理员</p>
                 {% endif %}
-            </td>
-        </tr>
-        <tr>
-            <td>操作</td>
-            <td><a href="{% url 'stores:update' store.id %}">修改店铺信息</a></td>
-        </tr>
-    </table>
-    <hr>
-    <h1>上架商品</h1>
-    <form action="{% url 'goods:add' store.id %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        商品名称：<input type="text" name="name" id="name"> <br>
-        商品单价：<input type="number" name="price"> <br>
-        商品库存：<input type="number" name="stock"> <br>
-        <!--<input type="hidden" name="store" value="{{store.id}}"> <br>-->
-        商品图片：<input type="file" name="cover"><button>继续添加</button> <br>
-        商品类型：
-            <select name="type1" id="type1">
-                <option value="-1">请选择一级类型</option>
-                {% for t in type1 %}
-                <option value="{{t.id}}">{{t.name}}</option>
-                {% endfor %}
-            </select>
-            <select name="type2" id="type2">
-                <option value=""></option>
-            </select> <br>
-        商品介绍：
-        <textarea name="intro" id="intro" cols="30" rows="10"></textarea> <br>
-        <button type="submit" class="btn btn-default submit-btn">添加商品</button>
-    </form>
-    <hr>
-    <h1>已上架商品</h1>
-    {% for g in goods %}
-    <div>
-        <img src="/{{g.goodsimage_set.all.first.path}}" alt="商品图片">==========={{g.name}}======{{g.price}}======{{g.stock}} <br>
-        <a href="{% url 'goods:detail' g.id %}">查看商品详情</a>
+            </li>
+            <li class="stores_caozuo">
+                <button><a href="{% url 'stores:update' store.id %}">修改店铺信息</a></button>
+                <button><a href="{% url 'goods:add' store.id %}">上架商品</a></button>
+            </li>
+        </ul>
     </div>
-    {% empty %}
-        当前没有商品呢
-    {% endfor %}
+</div>
 
+    <!--<hr>-->
+    <!--<h1>上架商品</h1>-->
+    <!--<form action="{% url 'goods:add' store.id %}" method="post" enctype="multipart/form-data">-->
+        <!--{% csrf_token %}-->
+        <!--商品名称：<input type="text" name="name" id="name"> <br>-->
+        <!--商品单价：<input type="number" name="price"> <br>-->
+        <!--商品库存：<input type="number" name="stock"> <br>-->
+        <!--&lt;!&ndash;<input type="hidden" name="store" value="{{store.id}}"> <br>&ndash;&gt;-->
+        <!--商品图片：<input type="file" name="cover"><button>继续添加</button> <br>-->
+        <!--商品类型：-->
+            <!--<select name="type1" id="type1">-->
+                <!--<option value="-1">请选择一级类型</option>-->
+                <!--{% for t in type1 %}-->
+                <!--<option value="{{t.id}}">{{t.name}}</option>-->
+                <!--{% endfor %}-->
+            <!--</select>-->
+            <!--<select name="type2" id="type2">-->
+                <!--<option value=""></option>-->
+            <!--</select> <br>-->
+        <!--商品介绍：-->
+        <!--<textarea name="intro" id="intro" cols="30" rows="10"></textarea> <br>-->
+        <!--<button type="submit" class="btn btn-default submit-btn">添加商品</button>-->
+    <!--</form>-->
+    <!--<hr>-->
+    <div class="goods">
+        <div class="biaoti center">小米明星单品</div>
+        <div class="main center"><!--<div class="row">-->
+            {% for g in goods %}
+            <div class="good">
+                <div class="sub_mingxing">
+                    <a href="{% url 'goods:detail' g.id %}">
+                        <img src="/{{g.goodsimage_set.all.first.path}}" alt="商品图片">
+                    </a>
+                </div>
+                <div class="pinpai"><a href="{% url 'goods:detail' g.id %}">{{g.name}}</a></div>
+                <div class="youhui">{{g.intro | truncatechars:20}}</div>
+                <div class="jiage">{{g.price}}元</div>
+                <a class="xiangqing" href="{% url 'goods:detail' g.id %}">查看商品详情</a>
+            </div>
+            {% empty %}
+                当前没有商品呢
+            {% endfor %}
+        </div>
+    </div>
+
+    <!--<div class="danpin center">-->
+
+
+
+
+				<!--<div class="mingxing fl">-->
+					<!--<div class="sub_mingxing"><a href=""><img src="{% static 'common/img/pinpai2.png'%}" alt=""></a></div>-->
+					<!--<div class="pinpai"><a href="">小米5s</a></div>-->
+					<!--<div class="youhui">5月9日-10日，下单立减200元</div>-->
+					<!--<div class="jiage">1999元</div>-->
+				<!--</div>-->
+				<!--<div class="mingxing fl">-->
+					<!--<div class="sub_mingxing"><a href=""><img src="{% static 'common/img/pinpai3.png'%}" alt=""></a></div>-->
+					<!--<div class="pinpai"><a href="">小米手机5 64GB</a></div>-->
+					<!--<div class="youhui">5月9日-10日，下单立减100元</div>-->
+					<!--<div class="jiage">1799元</div>-->
+				<!--</div>-->
+				<!--<div class="mingxing fl">-->
+					<!--<div class="sub_mingxing"><a href=""><img src="{% static 'common/img/pinpai4.png' %}" alt=""></a></div>-->
+					<!--<div class="pinpai"><a href="">小米电视5s 55英寸</a></div>-->
+					<!--<div class="youhui">5月9日，下单立减200元</div>-->
+					<!--<div class="jiage">3999元</div>-->
+				<!--</div>-->
+				<!--<div class="mingxing fl">-->
+					<!--<div class="sub_mingxing"><a href=""><img src="{% static 'common/img/pinpai5.png' %}" alt=""></a></div>-->
+					<!--<div class="pinpai"><a href="">小米笔记本</a></div>-->
+					<!--<div class="youhui">更轻更薄，像杂志一样随身携带</div>-->
+					<!--<div class="jiage">3599元起</div>-->
+				<!--</div>-->
+				<!--<div class="clear"></div>-->
+			<!--</div>-->
+		<!--</div>-->
+    <!--<footer class="mt20 center">-->
+        <!--<div class="mt20">小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</div>-->
+        <!--<div>©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</div>-->
+        <!--<div>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>-->
+    <!--</footer>-->
 
 
 <script>
@@ -107,3 +233,39 @@
 
 </body>
 </html>
+
+<!--<tr >-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        <!--<tr class="stores_name">-->
+            <!--<td>店铺名称</td>-->
+            <!--<td>{{store.name}}</td>-->
+        <!--</tr>-->
+        <!--<br>-->
+        <!--<tr class="stores_intro">-->
+            <!--<td>店铺介绍</td>-->
+            <!--<td>{{store.intro}}</td>-->
+        <!--</tr>-->
+        <!--<tr class="stores_status">-->
+            <!--<td>店铺状态</td>-->
+            <!--<td>-->
+                <!--{% if store.status == 0 %}-->
+                    <!--<p>正在营业</p>-->
+                    <!--<button><a href="{% url 'stores:change' store.id 1 %}">暂停营业</a></button>-->
+                    <!--<button><a href="{% url 'stores:change' store.id 2 %}">删除店铺</a></button>-->
+                <!--{% elif store.status == 1 %}-->
+                    <!--<p>暂停营业</p>-->
+                    <!--<button><a href="{% url 'stores:change' store.id 0 %}">开始营业</a></button>-->
+                    <!--<button><a href="{% url 'stores:change' store.id 2 %}">删除店铺</a></button>-->
+                <!--{% elif store.status == 2 %}-->
+                    <!--<p>店铺已经被删除，请联系管理员</p>-->
+                <!--{% endif %}-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--<tr class="stores_caozuo">-->
+            <!--<td>操作</td>-->
+            <!--<td>-->
+                <!--<button><a href="{% url 'stores:update' store.id %}">修改店铺信息</a></button>-->
+                <!--<button><a href="{% url 'goods:add' store.id %}">上架商品</a></button>-->
+            <!--</td>-->
+        <!--</tr>-->
