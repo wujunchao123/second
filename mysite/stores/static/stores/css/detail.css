@@ -2,19 +2,38 @@
     margin:0
     padding:0
 }
-.stores{
-
-    margin-left:300px;
-    display:block;
+.logo{
+    margin-top:25px;
 }
-.stores .stores_xiangqing ul li{
+.stores{
+    margin-left:200px;
     float:left;
 }
-.stores .stores_xiangqing ul li img{
+.stores_left{
+    float:left;
+}
+.stores_right{
+    float:right;
+}
+.stores_img img{
     width:200px;
     height:200px;
     border-style:solid;
     border-width:1px;
+    border-radius:100%;
+}
+.stores_name{
+    margin:10px 0 0 40px;
+    color:#ff6600;
+}
+.stores_intro{
+    margin:0 0 -5px 40px;
+}
+.stores_status{
+    margin:0 0 0 40px;
+}
+.stores_caozuo{
+    margin:0 0 0 40px;
 }
 
 
@@ -28,9 +47,9 @@
     float:left;
     border-style:solid;
     border-width:1px;
-    margin-left:100px;
+    margin-left:130px;
     margin-top:5px;
-    margin-right:-80px;
+    margin-right:-100px;
     padding:40px 0 5px 80px;
     display:block;
 }
@@ -50,7 +69,7 @@
     margin-left:-20px;
 }
 .jiage{
-    margin-left:60px;
+    margin-left:50px;
 }
 .xiangqing{
     margin-left:30px;

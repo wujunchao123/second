@@ -82,25 +82,25 @@ def gou_wu_che(request):
 @require_GET
 @login_required
 def add(request, count, goods_id):
-   goods = Goods.objects.get(pk=goods_id)
-   user = request.user
+	goods = Goods.objects.get(pk=goods_id)
+	user = request.user
 
-   try:
-       shopCart = models.ShopCart.objects.get(user=user, goods=goods)
-       shopCart.count += int(count)
-       shopCart.allTotal = shopCart.count * goods.price
-       shopCart.save()
+	try:
+		shopCart = models.ShopCart.objects.get(user=user, goods=goods)
+		shopCart.count += int(count)
+		shopCart.allTotal = shopCart.count * goods.price
+		shopCart.save()
 
-   except:
-       shopCart = models.ShopCart(goods=goods, user=user)
-       shopCart.count = int(count)
-       shopCart.allTotal = shopCart.count * goods.price
-       shopCart.save()
+	except:
+		shopCart = models.ShopCart(goods=goods, user=user)
+		shopCart.count = int(count)
+		shopCart.allTotal = shopCart.count * goods.price
+		shopCart.save()
 
-    return redirect(reverse("shopcar:list"))
+	return redirect(reverse("shopcar:list"))
 
 
 def list(request):
-    shopcarts = models.ShopCart.filter(user=request.use.order_by("-addTime"))
-    return render(request, "shopcar/list.html", {"shopcarts": shopcarts})
+	shopcarts = models.ShopCart.filter(user=request.use.order_by("-addTime"))
+	return render(request, "shopcar/list.html", {"shopcarts": shopcarts})
 
