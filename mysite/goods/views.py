@@ -19,7 +19,7 @@ def add(request, store_id):
 		name = request.POST["name"]
 		price = request.POST["price"]
 		stock = request.POST["stock"]
-		store_id = request.POST["store"]
+		# store_id = request.POST["store"]
 		type2 = request.POST["type2"]
 		intro = request.POST["intro"]
 		cover = request.FILES["cover"]
@@ -57,33 +57,35 @@ def detail(request, g_id):
 # 修改商品
 @login_required
 def update(request, g_id):
-	if request.method == "GET":
-		# type1 = models.GoodsType.objects.filter(goodType__isnull=True)
-		return render(request, "goods/update.html", {"g_id": g_id})
-	else:
-		name = request.POST["name"]
-		price = request.POST["price"]
-		stock = request.POST["stock"]
-		# store_id = request.POST["store"]
-		# type2 = request.POST["type2"]
-		intro = request.POST["intro"]
-		cover = request.FILES["cover"]
-
-		# store = Stores.objects.get(pk=store_id)
-		# goodsType = models.GoodsType.objects.get(pk=type2)
-
-		# 数据验证
-
-		goods = models.Goods(name=name, price=price, stock=stock, intro=intro)
-		goods.save()
-
-		goodImage = models.GoodsImage(path=cover, goods=goods)
-		goodImage.save()
-
-		return redirect(reverse("stores:detail", kwargs={"g_id":g_id}))
+	return redirect("/")
+	# if request.method == "GET":
+	# 	# type1 = models.GoodsType.objects.filter(goodType__isnull=True)
+	# 	goods = models.Goods.objects.get(pk=g_id)
+	# 	return render(request, "goods/update.html", {"goods": goods, "store": goods.store})
+	# else:
+	# 	name = request.POST.get("name")
+	# 	price = request.POST["price"]
+	# 	stock = request.POST["stock"]
+	# 	store_id = request.POST["store"]
+	# 	type2 = request.POST["type2"]
+	# 	intro = request.POST["intro"]
+	# 	cover = request.FILES["cover"]
+	#
+	# 	store = Stores.objects.get(pk=store_id)
+	# 	# goodsType = models.GoodsType.objects.get(pk=type2)
+	#
+	# 	# 数据验证
+	#
+	# 	goods = models.Goods(name=name, price=price, stock=stock, intro=intro, store=store, goodsType=type2)
+	# 	goods.save()
+	#
+	# 	goodImage = models.GoodsImage(path=cover, goods=goods)
+	# 	goodImage.save()
+	#
+	# 	return redirect(reverse("stores:detail", kwargs={"g_id": g_id}))
 
 
 # 删除商品
 @login_required
 def delete(request, g_id):
-	pass
+	return redirect("/")
