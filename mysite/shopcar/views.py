@@ -1,10 +1,10 @@
 from django.shortcuts import render,reverse, redirect
 from django.contrib.auth.decorators import login_required
-# from goods import models
+from goods.models import Goods
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST, require_GET
 from django.http import HttpResponse, JsonResponse
-# from .models import ShopCart
+from . import models
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 import json
@@ -79,19 +79,28 @@ def gou_wu_che(request):
 #     else:
 #         return HttpResponse("删除购物车失败~")
 
-def add(request):
-    if request.method == "GET":
-        return render(request, "shopcar/add.html")
-    elif request.method == "POST":
-        names = request.POST["name"]
-        count = request.POST["count"]
-        price = request.POST["price"]
-        all = int(count) * int(price)
+@require_GET
+@login_required
+def add(request, count, goods_id):
+   goods = Goods.objects.get(pk=goods_id)
+   user = request.user
 
-        sel = request.POST["sel"]
-        # kan1 = request.POST["kan1"]
-        # kan11 = request.POST["kan11"]
-        # kan22 = request.POST["kan22"]
+   try:
+       shopCart = models.ShopCart.objects.get(user=user, goods=goods)
+       shopCart.count += int(count)
+       shopCart.allTotal = shopCart.count * goods.price
+       shopCart.save()
+
+   except:
+       shopCart = models.ShopCart(goods=goods, user=user)
+       shopCart.count = int(count)
+       shopCart.allTotal = shopCart.count * goods.price
+       shopCart.save()
+
+    return redirect(reverse("shopcar:list"))
 
 
-        return render(request, "shopcar/add.html", {"name": names, "count": count, "price": all, "sel": sel})
+def list(request):
+    shopcarts = models.ShopCart.filter(user=request.use.order_by("-addTime"))
+    return render(request, "shopcar/list.html", {"shopcarts": shopcarts})
+
