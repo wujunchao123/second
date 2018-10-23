@@ -142,7 +142,9 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 MD5_SALT = "chaominghao"
 
 # 数据库头像保存路径
-# MEDIA_URL ='user/static/upload/'
-# MEDIA_ROOT = './user/static/upload/'
-MEDIA_URL = '/static/upload/'
-MEDIA_POOT = './static/upload/'
+MEDIA_URL ='user/static/upload/'
+MEDIA_ROOT = './user/static/upload/'
+
+
+# session存在对象前会自动调用该模块进行数据的序列化
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
