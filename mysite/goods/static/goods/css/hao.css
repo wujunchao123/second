@@ -1,0 +1,89 @@
+*{
+   margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #eee;
+}
+.hao0{
+    font-size: 16px;
+    margin-top: 40px;
+    color: black;
+
+}
+.hao1{
+    background-color: white;
+    color: #888;
+}
+.hao_top{
+    font-size: 22px;
+    color: #777 ;
+    margin-left: 80px;
+    margin-top: 30px;
+    font-weight: bolder;
+}
+.hao2{
+    /*display: inline-block;*/
+    /*float: left;*/
+    /*width: 200px;*/
+    /*height: 800px;*/
+    background-color: white;
+    margin-top: 20px;
+}
+.hao3{
+    background-color: white;
+    margin-top: 20px;
+    /*display: inline-block;*/
+    /*margin-top: -400px;*/
+    /*width: 600px;*/
+    /*height: 800px;*/
+    /*margin-left: 1000px;*/
+    /*float: right;*/
+}
+.hao4 .s1{
+    width: 300px;
+    height: 35px;
+}
+.hao4 .s2{
+    font-size: 17px;
+    margin-top: 10px;
+    width: 88px;
+    height: 32px;
+    margin-left: 90px;
+    color: #0f0f0f;
+
+}
+.ss2{
+    margin-left: 90px;
+}
+.s3{
+    margin-left: 180px;
+    width: 400px;
+    height: 200px;
+}
+.s4{
+    margin-left: 180px;
+    width: 100px;
+    height: 40px;
+    background-color: #2e6da4;
+    color: white;
+    margin-bottom: 40px;
+}
+.hao4{
+    font-size: 18px;
+    color: #aaaaaa;
+    margin-top: 30px;
+    margin-left: 80px;
+}
+.hao5{
+    background-color: white;
+    margin-top: 10px;
+}
+.hao6{
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+}
+.hao7{
+    margin-bottom: 30px;
+}
