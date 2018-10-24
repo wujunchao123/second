@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "shopcar",
 	'stores',
 	'goods',
+    'mysearch',
 ]
 
 MIDDLEWARE = [

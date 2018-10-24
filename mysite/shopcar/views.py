@@ -31,8 +31,8 @@ def gou_wu_che(request):
 #             shopcart1.save()
 #             break
 #     else:
-#         shopcart = ShopCart(goods=goods, count=count, allTotal=allTotal, user=request.user)
-#         shopcart.save()
+#         shopcar = ShopCart(goods=goods, count=count, allTotal=allTotal, user=request.user)
+#         shopcar.save()
 #         carts_count += 1
 #     return HttpResponse("{}".format(carts_count))
 #
@@ -64,7 +64,7 @@ def gou_wu_che(request):
 #     else:
 #         pages = range(pageNow - 2, pageNow + 3)
 #
-#     return render(request, "shopcart/list.html", {"page": page, "pageSize": pageSize, "pages": pages, "num_pages": num_pages})
+#     return render(request, "shopcar/list.html", {"page": page, "pageSize": pageSize, "pages": pages, "num_pages": num_pages})
 #
 #
 # @csrf_exempt
@@ -73,8 +73,8 @@ def gou_wu_che(request):
 # def delete(request):
 #     sc_id = request.POST.get("sc_id")
 #     if sc_id:
-#         shopcart = ShopCart.objects.get(pk=sc_id)
-#         shopcart.delete()
+#         shopcar = ShopCart.objects.get(pk=sc_id)
+#         shopcar.delete()
 #         return HttpResponse("删除购物车成功~")
 #     else:
 #         return HttpResponse("删除购物车失败~")
@@ -101,6 +101,7 @@ def add(request, count, goods_id):
 
 
 def list(request):
-	shopcarts = models.ShopCart.filter(user=request.use.order_by("-addTime"))
+	# shopcarts = models.ShopCart.filter(user=request.use.order_by("-addTime"))
+	shopcarts = models.ShopCart.objects.filter(user=request.user)
 	return render(request, "shopcar/list.html", {"shopcarts": shopcarts})
 

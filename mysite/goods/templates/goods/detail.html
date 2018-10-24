@@ -160,8 +160,8 @@
 			</div>
 			<div class="xiadan ml20 mt20">
 					<input class="jrgwc"  type="button" name="jrgwc" value="立即选购" />
-                    <a href="#"><input class="jrgwc" type="button" name="jrgwc" value="加入购物车" /></a>
-				    {#{% url 'shopcar:add' 1 goods.id %}#}
+                    <!--<a href="#"><input class="jrgwc" type="button" name="jrgwc" value="加入购物车" /></a>-->
+				    <button class="jrgwc addGoods" goods_id="{{goods.id}}">添加购物车</button>
 			</div>
 		</div>
 		<div class="clear"></div>
