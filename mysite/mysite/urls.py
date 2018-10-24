@@ -24,5 +24,6 @@ urlpatterns = [
 	url(r"^shopcar/", include("shopcar.urls", namespace="shopcar")),
 	url(r"^stores/", include("stores.urls", namespace="stores")),
 	url(r"^goods/", include("goods.urls", namespace="goods")),
-	url(r"^", include("common.urls", namespace="common"))
+	url(r"^orders/", include("orders.urls", namespace="orders")),
+	url(r"^", include("common.urls", namespace="common")),
 ]

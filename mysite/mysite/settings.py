@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "shopcar",
 	'stores',
 	'goods',
+	'orders',
 ]
 
 MIDDLEWARE = [
@@ -144,8 +145,6 @@ MD5_SALT = "chaominghao"
 # 数据库头像保存路径
 # MEDIA_URL ='user/static/upload/'
 # MEDIA_ROOT = './user/static/upload/'
-MEDIA_URL ='static/goods/'
-MEDIA_ROOT = './static/goods/'
 
 
 # session存在对象前会自动调用该模块进行数据的序列化

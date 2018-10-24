@@ -1,0 +1,33 @@
+.stores{
+    margin-left:450px;
+    width:800px;
+    height:300px;
+}
+.stores_title{
+    margin-left:-130px;
+}
+.stores_left{
+    float:left;
+}
+.stores_right{
+    float:left;
+    margin-bottom:50px;
+}
+.stores_img img{
+    width:200px;
+    height:200px;
+    border-style:solid;
+    border-width:1px;
+    border-radius:100%;
+    margin-top:10px;
+}
+.stores_name{
+    margin:20px 0 0 40px;
+    color:#ff6600;
+}
+.stores_intro{
+    margin:20px 0 0 40px;
+}
+.stores_caozuo{
+    margin:20px 0 0 40px;
+}
