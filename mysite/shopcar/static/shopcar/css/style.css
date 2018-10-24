@@ -37,8 +37,8 @@ header .top .right .gouwuche{margin:0 20px;background: #424242;width: 120px;text
 header .top .right .gouwuche:hover{color:#000;background: #666;}
 /*banner_x*/
 .banner_x {width: 1226px;height: 100px;}
-.banner_x .logo{background: url('../img/logo_top.png') no-repeat center center;width: 50px;height: 100px;}
-.banner_x .ad_top{width: 180px;height: 100px;background: url('../img/yyymix.gif') no-repeat center center;}
+.banner_x .logo{background: url('../image/logo_top.png') no-repeat center center;width: 50px;height: 100px;}
+.banner_x .ad_top{width: 180px;height: 100px;background: url('../image/yyymix.gif') no-repeat center center;}
 .banner_x .nav ul li{float: left;height: 100px;line-height: 100px;}
 .banner_x .nav ul li a{display:inline-block;color: #000;font-size: 16px;padding: 0 10px;}
 .banner_x .nav ul li a:hover{color: rgb(255,103,0); }
@@ -50,7 +50,7 @@ header .top .right .gouwuche:hover{color:#000;background: #666;}
 .banner_x .search .submit .sousuo{letter-spacing:3px;text-align:center;width: 50px;height:50px;border: none;background: none;cursor:pointer;}
 .banner_x .search .submit:hover{border-color: #ff6700;color:#ff6700;}
 /*banner_y*/
-.banner_y{width:1226px;height:460px;background: url('../img/banner2.jpg') no-repeat;}
+.banner_y{width:1226px;height:460px;background: url('../image/banner2.jpg') no-repeat;}
 .banner_y .nav{width: 234px;height: 460px;background: rgb(12,12,19);}
 .banner_y .nav ul{padding: 20px 0;position:relative;}
 .banner_y .nav ul li{display: block;width: 174px;height: 40px;line-height:40px;font-size: 14px;padding: 0 30px;}
@@ -170,7 +170,7 @@ header .top .right .gouwuche:hover{color:#000;background: #666;}
 .xiadan .jrgwc{height: 50px;width: 200px;border:none;background:#ff6700;color:#fff;font-size: 18px;font-weight: bold;cursor:pointer;margin-right: 50px;}
 .xiadan .jrgwc:hover{border:1px solid #fff;}
 /*我的购物车*/
-.banner_x .wdgwc{height: 100px;line-height: 100px;font-weight:bold;font-size: 24px;}
+.banner_x .wdgwc{height: auto;line-height: 100px;font-weight:bold;font-size: 24px;}
 .banner_x .wxts{height: 90px;line-height: 105px;font-size: 12px;color:#777;}
 .banner_x .dlzc{height: 100px;line-height: 100px;}
 .banner_x .dlzc ul li{float: left;font-size: 12px;}
@@ -202,7 +202,7 @@ header .top .right .gouwuche:hover{color:#000;background: #666;}
 .gwcxqbj .gwcxd .content2 .sub_content a{display: block;width: 20px;height: 20px;border-radius: 10px;color:#000;}
 .gwcxqbj .gwcxd .content2 .sub_content a:hover{color:#ff6700;}
 /*结算单*/
-.jiesuandan{width:1226px;height: auto;background: #fff;}
+.jiesuandan{width:1226px;height:auto;background: #fff;}
 .jiesuandan .tishi{width: 400px;height: 50px;line-height: 50px;}
 .jiesuandan .tishi ul li{float: left; font-size: 14px;display: inline-block;padding:0 10px;color:#666;}
 .jiesuandan .tishi ul li a{color:#666;}

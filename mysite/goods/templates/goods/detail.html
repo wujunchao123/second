@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
+		{% load static %}
 		<meta charset="UTF-8">
         <meta name="author" content="order by dede58.com"/>
 		<title>小米商城--商品详情</title>
 		<!--<link rel="stylesheet" type="text/css" href="./css/style.css">-->
 		<link rel="stylesheet" type="text/css" href="/static/goods/css/style.css">
+		<script src="{% static 'js/lib/jquery2.2.4/jquery-2.2.4.min.js' %}"></script>
 
 	</head>
 	<body>
@@ -97,7 +99,7 @@
 
 	
 	<!-- xiangqing -->
-	<form action="post" method="">
+	<form action="" method="">
 	<div class="xiangqing">
 		<div class="neirong w">
 			<div class="xiaomi6 fl">{{goods.name}}</div>
@@ -169,11 +171,12 @@
 			</div>
 			<div class="xiadan ml20 mt20">
 					<input class="jrgwc"  type="button" name="jrgwc" value="立即选购" />
-                    <a href="#"><input class="jrgwc" type="button" name="jrgwc" value="加入购物车" /></a>
-				    {#{% url 'shopcar:add' 1 goods.id %}#}
+                    <!--<a href="#"><input class="jrgwc" type="button" name="jrgwc" value="加入购物车" /></a>-->
+				    <input class="jrgwc addGoods" type="button" goods_id="{{goods.id}}" value="添加购物车"></input>
+
 			</div>
 		</div>
-		<div class="clear"></div>
+		<!--<div class="clear"></div>-->
 	</div>
 	</form>
 	<!-- footer -->
@@ -184,6 +187,38 @@
 			<div>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>
 
 		</footer>
+	<script>
+		$(function () {
+			$(".addGoods").on('click', function () {
+				var _goods_id = $(this).attr("goods_id");
+				$.ajax({
+					url: "/shopcar/1/"+_goods_id+"/add/",
+					type:"get",
+					// dataType: "json",
+					data: {"csrfmiddlewaretoken": "{{ csrf_token }}"},
+					success: function (msg) {
+					    // alert(msg.msg);
+						alert("添加成功");
+                    },
+					error:function(data,type, err){
+						console.log("ajax错误类型："+type);
+	         			console.log(err);
+
+
+	   				 }
+
+				})
+
+            })
+        })
+
+	</script>
+
+
+
+
+
+
 
 	</body>
 </html>
