@@ -7,12 +7,18 @@
         {% if query %}
             <h3>搜索结果如下：</h3>
             {% for result in page.object_list %}
-            <a href="/goods/details/{{ result.object.id }}//{{ result.object.id }}/">
+            <a href="/goods/{{ result.object.id }}/detail/">
+
+                <img src="/static/goods/{{result.object.goodsType.cover}}" alt="这是图片">
+                <!--<p>{{result.object.goodsType.cover}}</p>-->
                 {{ result.object.name }}
-            </a><br/>
-            {% empty %}
-                <p>啥也没找到</p>
-            {% endfor %}
+                {{ result.object.price }}
+                {{ result.object.intro }}
+                <br>
+                </a><br/>
+                {% empty %}
+                <p>对不起，没找到您搜索的宝贝</p>
+                {% endfor %}
             {% if page.has_previous or page.has_next %}
             <div>
                 {% if page.has_previous %}
