@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+
+{% block pwd %}
+    <div class="grzlbt ml40">修改密码</div>
+<form action="{% url 'user:update_pw'%}" method="post">
+    <div class="h1">
+        {{ msg }}
+        {% csrf_token %}
+
+        <div class="username h2">旧&nbsp;&nbsp;密&nbsp;&nbsp;码:&nbsp;&nbsp;
+            <input class="shurukuang h3" type="password" name="opassword" placeholder="请输入您的旧密码"/>
+            <span>请输入6位以上字符</span>
+        </div>
+        <div class="username h2">新&nbsp;&nbsp;密&nbsp;&nbsp;码:&nbsp;&nbsp;
+            <input class="shurukuang h3" type="password" name="npassword" placeholder="请输入您的新密码"/>
+            <span>请输入6位以上字符</span>
+        </div>
+
+        <div class="username h2">确认密码:&nbsp;&nbsp;
+            <input class="shurukuang h3" type="password" name="confirmpwd" placeholder="请确认您的新密码"/>
+            <span>两次密码要输入一致哦</span>
+        </div>
+        <div class="username ">
+            <div class="username h2">验&nbsp;&nbsp;证&nbsp;&nbsp;码:&nbsp;&nbsp;
+                <input class="yanzhengma h3" type="text" name="code" placeholder="请输入验证码" autocomplete="off"/>
+            </div>
+            <div class="right h5">
+                <a href="#" onclick="changeCode()">
+                    <img id="code" src="{% url 'user:code' %} " title="点击刷新">
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <input class="submit h4" type="submit" name="submit" value="修改密码" >
+    </div>
+
+    </form>
+{% endblock %}
