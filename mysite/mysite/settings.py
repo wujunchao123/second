@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 	'goods',
     'mysearch',
 	'orders',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,17 @@ MEDIA_ROOT = './static/goods/'
 
 # session存在对象前会自动调用该模块进行数据的序列化
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+
+# 制定搜索引擎
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'mysearch.whoosh_cn_backend.WhooshEngine', # 将来需要修改
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+ }
+}
+
+# 指定每页显示的条数
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+
+# 索引生成设置
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
