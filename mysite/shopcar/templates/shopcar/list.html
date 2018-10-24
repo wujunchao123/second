@@ -58,6 +58,23 @@
 					<div class="sub_content fl"><a href="">×</a></div>
 					<div class="clear"></div>
 				</div>
+                 {% for s in shopcarts %}
+                <div class="content2 center">
+                    <div class="sub_content fl ">
+                        <input type="checkbox" value="quanxuan" class="single" />
+                    </div>
+                    <div  class="sub_content fl"><img src="/{{s.goods.goodsimage_set.all.first.path}}" alt=""></div>
+                    <div  class="sub_content fl ft20">{{s.goods.name}}</div>
+                    <div  class="sub_content fl ft20">{{s.goods.price}}</div>
+                    <div class="sub_content fl">
+                        <input class="shuliang" type="number"  step="1" min="1" value="{{s.count}}" >
+                    </div>
+                    <div  class="sub_content fl">{{s.allTotal}}</div>
+                </div>
+                {% empty %}
+                {% endfor %}
+
+
 
 
 			</div>

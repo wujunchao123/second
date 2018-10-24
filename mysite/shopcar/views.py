@@ -91,13 +91,19 @@ def add(request, count, goods_id):
 		shopCart.allTotal = shopCart.count * goods.price
 		shopCart.save()
 
+
+
 	except:
 		shopCart = models.ShopCart(goods=goods, user=user)
 		shopCart.count = int(count)
 		shopCart.allTotal = shopCart.count * goods.price
 		shopCart.save()
 
-	return redirect(reverse("shopcar:list"))
+	print('here is done!')
+	json = JsonResponse({'msg':'success'})
+	# json.status_code=200
+	return  json
+	# return redirect(reverse("shopcar:list"))
 
 
 def list(request):
