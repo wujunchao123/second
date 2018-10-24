@@ -125,11 +125,6 @@ def update(request):
         print(header)
         id = request.session['login']
 
-        # user = models.User.objects.get(id=id)
-        # user = models.User(
-        #                    age=age,
-        #                    nickname=nickname,
-        #                    header=header)
         user.userinfo.phone = phone
         user.userinfo.age = age
         user.userinfo.nickname = nickname
@@ -171,3 +166,34 @@ def register2(request):
         user.save()
         return render(request, 'user/userInfo.html',
                       {"msg": "修改成功!!", 'user': user})
+
+
+# 修改密码
+def update_pw(request):
+    # 获取当前用户
+    user = request.user
+    if request.method == "GET":
+        return render(request, "user/update_pw.html", {"msg": "请正确修改信息！！", "user": user})
+    elif request.method == "POST":
+        opassword = request.POST["opassword"].strip()
+        npassword = request.POST["npassword"].strip()
+        confirmpwd = request.POST["confirmpwd"]
+
+        # 验证码判断
+        # code = request.POST['code']
+        # mycode = request.session['code']
+        # if code.upper() != mycode.upper():
+        #     return render(request, 'user/register.html', {'msg': '验证码输入错误'})
+        # del request.session['code']
+
+        user = authenticate(username=request.user.username, password=opassword)
+        if user is not None:
+            if npassword != confirmpwd:
+                return render(request, "user/update_pw.html", {"msg": "两次输入密码不一致，请重新输入！！"})
+            else:
+                user.set_password(npassword)
+                user.save()
+                logout(request)
+                return render(request, "user/login.html", {"msg": "修改成功，请重新登录..."})
+        else:
+            return render(request, "user/update_pw.html", {"error_code": 2, "msg": "原密码输入错误请重新输入"})

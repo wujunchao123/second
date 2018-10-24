@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="/static/stores/css/detail.css">
-    <!--<link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css">-->
+	{% load static %}
+		<!--<script src="{% static 'js/lib/jquery2.2.4/jquery-2.2.4.js' %}"></script>-->
+		<!--<script src="{% static '/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>-->
     <link rel="stylesheet" href="/static/stores/css/style.css">
+    <link rel="stylesheet" href="/static/stores/css/hao.css">
 </head>
 <body>
 <!-- start header -->
@@ -98,14 +99,18 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-<!-- end banner_x -->
-    <h1>开业大吉</h1>
-    <form action="{% url 'stores:add' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        店铺名称：<input type="text" name="name"> <br>
-        店铺封面：<input type="file" name="cover" id="cover"> <br>
-        店铺介绍 <textarea name="intro" id="intro" cols="30" rows="10"></textarea> <br>
-        <input type="submit" value="开业大吉">
-    </form>
+
+		<h1 class="nbq">开业大吉</h1>
+		<form action="{% url 'stores:add' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="nbw">店铺名称：<input type="text" name="name" class="nbw1" autocomplete="off"> <br></div>
+		<div class="nbw">店铺封面：<input type="file" name="cover" id="cover" > <br></div>
+		<div class="nbw">店铺介绍: </div>
+		<div><textarea name="intro" id="intro" cols="30" rows="10" class="nbe"></textarea> <br></div>
+		<input type="submit" value="开业大吉" class="nbr">
+		</form>
+
+
+
 </body>
 </html>

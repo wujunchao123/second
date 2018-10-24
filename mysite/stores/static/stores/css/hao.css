@@ -1,55 +1,95 @@
-*{
-   margin: 0;
-    padding: 0;
+.nbq{
+    margin-left: 300px;
+    color: #8c8c8c;
+    margin-top: 20px;
 }
+.nbw{
+    margin-left: 300px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333333;
+}
+.nbw1{
+    width: 300px;
+    height: 38px;
+    border-radius: 5%;
+}
+.nbe{
+    width: 500px;
+    height: 200px;
+    margin-left: 390px;
+}
+.nbr{
+    margin-left: 390px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    background-color: #28a4c9;
+    font-weight: bolder;
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.nbt{
+    margin-left: 390px;
+    width: 300px;
+    height: 300px;
+}
+
+
+/**{*/
+   /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
 body{
     background-color: #eee;
 }
-.top{
-    background-color: white;
-}
-li{
-    list-style: none;
-    float: left;
-    margin-top: 40px;
-}
-.to1{
-    text-decoration: none;
-    color: black;
+/*.top{*/
+    /*background-color: white;*/
+/*}*/
+/*li{*/
+    /*list-style: none;*/
+    /*float: left;*/
+    /*margin-top: 40px;*/
+/*}*/
+/*.to1{*/
+    /*text-decoration: none;*/
+    /*color: black;*/
 
-    font-size: 17px;
-}
-.nb_top{
-    margin-top: 10px;
-}
-.nb0{
-    background-color: white;
-}
-.nb1{
-    font-size: 22px;
-    color: #777 ;
-    margin-top: 30px;
-    font-weight: bolder;
-    margin-left: 90px;
-}
-.nb2{
-    font-size: 17px;
-    margin-left: 90px;
-    color: #444;
-    margin-top: 10px;
+    /*font-size: 17px;*/
+/*}*/
+/*.nb_top{*/
+    /*margin-top: 10px;*/
+/*}*/
+/*.nb0{*/
+    /*background-color: white;*/
+/*}*/
+/*.nb1{*/
+    /*font-size: 22px;*/
+    /*color: #777 ;*/
+    /*margin-top: 30px;*/
+    /*font-weight: bolder;*/
+    /*margin-left: 90px;*/
+/*}*/
+/*.nb2{*/
+    /*font-size: 17px;*/
+    /*margin-left: 90px;*/
+    /*color: #444;*/
+    /*margin-top: 10px;*/
 
 
-}
-.nb2_1{
-    width: 300px;
-    height: 35px;
-    border-radius: 10px;
-}
-.nb2_2{
-    margin-left: 90px;
-}
-.nb3{
-    width: 400px;
-    height: 400px;
-    margin-left: 90px;
-}
+/*}*/
+/*.nb2_1{*/
+    /*width: 300px;*/
+    /*height: 35px;*/
+    /*border-radius: 10px;*/
+/*}*/
+/*.nb2_2{*/
+    /*margin-left: 90px;*/
+/*}*/
+/*.nb3{*/
+    /*width: 400px;*/
+    /*height: 400px;*/
+    /*margin-left: 90px;*/
+/*}*/

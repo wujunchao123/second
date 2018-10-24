@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>上架商品</title>
     {% load static %}
-    <script src="{% static 'js/lib/jquery2.2.4/jquery-2.2.4.min.js' %}"></script>
-    <script src="{% static '/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    <!--<script src="{% static 'js/lib/jquery2.2.4/jquery-2.2.4.min.js' %}"></script>-->
+    <!--<script src="{% static '/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>-->
     <!--<script src="/static/js/lib/jquery2.2.4/jquery-2.2.4.min.js}"></script>-->
-
+	<link rel="stylesheet" href="/static/goods/css/hao.css">
     <link rel="stylesheet" href="/static/stores/css/detail.css">
     <!--<link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css">-->
     <link rel="stylesheet" href="/static/stores/css/style.css">
@@ -98,17 +98,17 @@
 			</div>
 		</div>
 <!-- end banner_x -->
-    <h1>上架商品</h1>
+    <h1 class="mi_top">上架商品</h1>
     <div>
         <form action="{% url 'goods:add' store_id %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            商品名称：<input type="text" name="name" id="name"> <br>
-            商品单价：<input type="number" name="price"> <br>
-            商品库存：<input type="number" name="stock"> <br>
+            <div class="mi0">商品名称：<input type="text" name="name" id="name" class="xm1"> <br></div>
+            <div class="mi0">商品单价：<input type="number" name="price" class="xm1"> <br></div>
+            <div class="mi0">商品库存：<input type="number" name="stock" class="xm1"> <br></div>
             <!--<input type="hidden" name="store" value="{{store.id}}"> <br>-->
-            商品图片：<input type="file" name="cover"><button>继续添加</button> <br>
-            商品类型：
-                <select name="type1" id="type1">
+            <div class="mi0">商品图片：<input type="file" name="cover"><button>继续添加</button> <br></div>
+            <div class="mi0">商品类型：
+				<select name="type1" id="type1">
                     <option value="-1">请选择一级类型</option>
                     {% for t in type1 %}
                     <option value="{{t.id}}">{{t.name}}</option>
@@ -117,9 +117,14 @@
                 <select name="type2" id="type2">
                     <option value=""></option>
                 </select> <br>
-            商品介绍：
-            <textarea name="intro" id="intro" cols="30" rows="10"></textarea> <br>
-            <button type="submit" class="btn btn-default submit-btn">添加商品</button>
+			</div>
+
+			<div class="mi0">商品介绍：</div>
+			<div class="mi1">
+				<textarea name="intro" id="intro" cols="30" rows="10" class="mi1"></textarea> <br>
+			</div>
+
+            <button type="submit" class="btn btn-default submit-btn mi2" >添加商品</button>
         </form>
     </div>
 

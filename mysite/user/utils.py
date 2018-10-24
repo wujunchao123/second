@@ -21,7 +21,7 @@ def getRandomColor():
 
 def create_code():
     # 创建图片，模式，大小，背景色
-    img = Image.new('RGB', (115,40), (255,255,255))
+    img = Image.new('RGB', (120,40), (255,255,255))
     #创建画布
     draw = ImageDraw.Draw(img)
     # 设置字体

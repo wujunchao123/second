@@ -9,6 +9,7 @@ urlpatterns = [
     url(r"^user_info/$", views.user_info, name="user_info"),
     url(r"^update/$", views.update, name="update"),
     url(r"^code/$", views.code, name="code"),
+    url(r"^update_pw/$", views.update_pw, name="update_pw"),
 
 
 

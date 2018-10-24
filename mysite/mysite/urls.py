@@ -26,5 +26,6 @@ urlpatterns = [
 	url(r"^goods/", include("goods.urls", namespace="goods")),
 	url(r"^search/", include("haystack.urls")),
 	url(r"^orders/", include("orders.urls", namespace="orders")),
+	url(r"^/", include("orders.urls", namespace="orders")),
 	url(r"^", include("common.urls", namespace="common"))
 ]
