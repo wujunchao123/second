@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+</head>
+<body>
+    <h1>请确认需要提交的订单</h1>
+    <form action="{% url 'orders:done' %}" method="post">
+        {% csrf_token %}
+        <table>
+            {% for sc in shop_carts %}
+            <input type="hidden" name="c_id" value="{{sc.id}}">
+                <tr>
+                    <td><img src="/{{sc.goods.goodsimage_set.all.first.path}}" alt="商品图片"></td>
+                    <td>商品名称：{{sc.goods.name}}</td>
+                    <td>商品数量：{{sc.count}}</td>
+                    <td>小计金额：{{sc.allTotal}}</td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>
+                    {% for address in addresses %}
+                        收货人：{{address.recv_name}} <br>
+                        收货人电话：{{address.recv_tel}} <br>
+                    {% if address.is_default %}
+                        <input type="radio" name="address" checked value="{{address.id}}">
+                    {% else %}
+                        <input type="radio" name="address" value="{{address.id}}">
+                </td>
+            </tr>
+        </table>
+        <button>立即付款</button>
+    </form>
+</body>
+</html>
