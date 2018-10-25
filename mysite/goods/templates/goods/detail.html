@@ -124,7 +124,7 @@
 	<div class="jieshao mt20 w">
 		<!--<div class="left fl"><img src="./image/liebiao_xiaomi6.jpg"></div>-->
 		<!--<div class="left fl"><img style="width:560px; height:560px" src="/static/goods/9.jpg" alt="商品图片"></div>-->
-		<div class="left fl"><img style="width:560px; height:560px" src="/{{goods.goodsimage_set.all.first.path}}" alt="商品图片"></div>
+		<div class="left fl"><img style="width:560px; height:560px" src="/static/upload/{{goods.goodsimage_set.all.first.path}}" alt="商品图片"></div>
 		<!--<div class="left fl"><img style="width:560px; height:560px" src="/{{goods.cover}}" alt="商品图片"></div>-->
 		<div class="right fr">
 			<!--<div class="h3 ml20 mt20">小米6</div>-->
@@ -171,9 +171,7 @@
 			</div>
 			<div class="xiadan ml20 mt20">
 					<input class="jrgwc"  type="button" name="jrgwc" value="立即选购" />
-                    <!--<a href="#"><input class="jrgwc" type="button" name="jrgwc" value="加入购物车" /></a>-->
-				    <input class="jrgwc addGoods" type="button" goods_id="{{goods.id}}" value="添加购物车"></input>
-
+				    <input class="jrgwc addGoods" type="button" goods_id="{{goods.id}}" value="添加购物车">
 			</div>
 		</div>
 		<!--<div class="clear"></div>-->
@@ -203,12 +201,8 @@
 					error:function(data,type, err){
 						console.log("ajax错误类型："+type);
 	         			console.log(err);
-
-
 	   				 }
-
 				})
-
             })
         })
 

@@ -100,7 +100,7 @@
         {% csrf_token %}
         <div class="nbw">店铺名称：<input type="text" name="name" value="{{store.name}}" class="nbw1"> <br></div>
         <div class="nbw">店铺封面：</div>
-            <img src="/{{store.cover}}" alt="" class="nbt"> <br>
+            <img src="/static/upload/{{store.cover}}" alt="" class="nbt"> <br>
         <div class="nbw">店铺封面：<input type="file" name="cover" id="cover"> <br></div>
         <div class="nbw">店铺介绍: </div>
             <textarea name="intro" id="intro" cols="30" rows="10" class="nbe">{{store.intro}}</textarea> <br>

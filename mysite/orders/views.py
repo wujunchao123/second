@@ -23,7 +23,7 @@ def done(request):
 	c_ids = request.POST.getlist("c_id")
 	address_id = request.POST["address"]
 
-	# address = Address.objects.get(pk=address_id)
+	address = Address.objects.get(pk=address_id)
 	shopcarts = ShopCart.objects.filter(pk__in=c_ids)
 
 	_address = address.recv_name + "|" + address.recv_tel + "|" + address.province + "|" + \

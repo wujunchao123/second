@@ -105,7 +105,7 @@
     <div class="stores">
     <!--<h1>店铺详情页面</h1>-->
         <div class="stores_left">
-            <div class="stores_img"><img src="/{{store.cover}}" alt="头像"></div>
+            <div class="stores_img"><img src="/static/upload/{{store.cover}}" alt="头像"></div>
         </div>
 
         <div class="stores_right">
@@ -127,6 +127,7 @@
             <div class="stores_caozuo">
                     <button><a href="{% url 'stores:update' store.id %}">修改店铺信息</a></button>
                     <button><a href="{% url 'goods:add' store.id %}">上架商品</a></button>
+                    <button><a href="{% url 'stores:add' %}">开店</a></button>
             </div>
         </div>
     </div>
@@ -137,7 +138,7 @@
             <div class="good">
                 <div class="sub_mingxing">
                     <a href="{% url 'goods:detail' g.id %}">
-                        <img src="/{{g.goodsimage_set.all.first.path}}" alt="商品图片">
+                        <img src="/static/upload/{{g.goodsimage_set.all.first.path}}" alt="商品图片">
                     </a>
                 </div>
                 <div class="pinpai"><a href="{% url 'goods:detail' g.id %}">{{g.name}}</a></div>
